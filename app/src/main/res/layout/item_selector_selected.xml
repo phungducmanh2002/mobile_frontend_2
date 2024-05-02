@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_vertical"
+    android:layout_marginBottom="20dp"
+    android:background="@drawable/bg_rounded_smoke"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="A00"
+        android:textStyle="bold"
+        android:textSize="17dp"
+        android:id="@+id/itemName"
+        android:layout_margin="10dp"
+        />
+
+</LinearLayout>

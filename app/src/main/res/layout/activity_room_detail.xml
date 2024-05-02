@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quạt"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/roomName"
+        />
+    <com.example.appktx2.ui.item.ItemField
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fieldLabel="Collection: "
+        app:fieldValue="A"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/collectionName"
+        />
+
+    <com.example.appktx2.ui.item.ItemField
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fieldLabel="Acreage: "
+        app:fieldValue="100 m3"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/acreage"
+        />
+
+    <com.example.appktx2.ui.item.ItemField
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fieldLabel="Gender: "
+        app:fieldValue="Male"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/gender"
+        />
+
+
+    <com.example.appktx2.ui.item.ItemField
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fieldLabel="Status: "
+        app:fieldValue="Active"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/status"
+        />
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add image"
+            android:background="@drawable/bg_rounded_blue"
+            android:textColor="@color/white"
+            android:id="@+id/addImage"
+            android:layout_marginRight="30dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Item manager"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:background="@drawable/bg_rounded_orange"
+            android:textColor="@color/white"
+            android:id="@+id/itemManager"
+            android:layout_alignParentRight="true"
+            />
+    </RelativeLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+    >
+    <com.example.appktx2.ui.view.MyImageListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/myImageListView"
+        />
+</ScrollView>
+
+<!--    <ImageView-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_pen"-->
+<!--        android:id="@+id/updateImage"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        />-->
+
+</LinearLayout>
+
+</LinearLayout>

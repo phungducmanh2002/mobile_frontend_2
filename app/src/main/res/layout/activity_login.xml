@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_margin="30dp"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DOMITORY MANAGEMENT"
+            android:layout_marginBottom="50dp"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            />
+
+        <com.example.appktx2.ui.components.Input
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            app:inputHint="Email"
+            app:inputType="text"
+            android:id="@+id/email"
+            />
+        <com.example.appktx2.ui.components.Input
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="40dp"
+            app:inputHint="password"
+            app:inputType="password"
+            android:id="@+id/password"
+            />
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_red"
+            android:textColor="@color/white"
+            android:text="Login"
+            android:id="@+id/login"
+            />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signup"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/blue"
+            android:layout_marginRight="50dp"
+            android:layout_marginBottom="20dp"
+            android:id="@+id/signup"
+            />
+    </RelativeLayout>
+
+</LinearLayout>

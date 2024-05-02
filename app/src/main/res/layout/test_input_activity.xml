@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context=".MainActivity"
+    >
+
+
+    <com.example.appktx2.ui.components.Input
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:inputText="INPUT TEXT"
+        app:inputType="password"
+        android:layout_marginBottom="20dp"
+        app:inputTextAlign="left"
+
+        />
+
+    <com.example.appktx2.ui.components.Input
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:inputHint="Number"
+        app:inputType="number"
+        android:layout_marginBottom="20dp"
+        app:inputTextAlign="center"
+        />
+
+    <com.example.appktx2.ui.components.Input
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:inputHint="text"
+        app:inputType="text"
+        android:layout_marginBottom="20dp"
+        app:inputTextAlign="right"
+        app:inputWarning="cảnh báo"
+        />
+
+    <com.example.appktx2.ui.components.InputDialog
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:inputHint="Password"
+        app:inputType="password"
+        />
+
+
+</LinearLayout>

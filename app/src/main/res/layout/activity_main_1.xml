@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_vertical|center_horizontal"
+    tools:context=".MainActivity">
+<!--    <ImageView-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:id="@+id/image"-->
+<!--        />-->
+
+<!--    <androidx.appcompat.widget.AppCompatButton-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="BTN"-->
+<!--        android:id="@+id/button"-->
+<!--        />-->
+
+
+    <com.example.appktx2.ui.item.ItemCommon
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemCommon"
+        >
+    </com.example.appktx2.ui.item.ItemCommon>
+
+    <com.example.appktx2.ui.item.ItemImage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/itemImage"
+        />
+
+
+</LinearLayout>

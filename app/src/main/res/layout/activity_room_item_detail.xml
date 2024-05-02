@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quạt"
+        android:textSize="24dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/itemName"
+        />
+    <com.example.appktx2.ui.item.ItemField
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:fieldLabel="Quantity: "
+        app:fieldValue="10"
+        android:layout_marginBottom="20dp"
+        android:id="@+id/itemQuantity"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:background="@drawable/bg_rounded_blue"
+            android:textColor="@color/white"
+            android:id="@+id/addQuantity"
+            android:layout_marginRight="30dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sub"
+            android:background="@drawable/bg_rounded_red"
+            android:textColor="@color/white"
+            android:id="@+id/subQuantity"
+            />
+
+    </LinearLayout>
+
+    <com.example.appktx2.ui.item.ItemImage
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:itemImageActionIcon="@drawable/ic_pen"
+        android:layout_marginTop="20dp"
+        android:id="@+id/itemImage"
+        />
+
+<!--    <ImageView-->
+<!--        android:layout_width="30dp"-->
+<!--        android:layout_height="30dp"-->
+<!--        android:src="@drawable/ic_pen"-->
+<!--        android:id="@+id/updateImage"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        />-->
+
+</LinearLayout>
+
+</LinearLayout>

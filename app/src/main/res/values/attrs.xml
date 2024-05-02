@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="input">
+        <attr name="inputHint" format="string" />
+        <attr name="inputText" format="string" />
+        <attr name="inputType" format="string" />
+        <attr name="inputWarning" format="string" />
+        <attr name="inputLength" format="string" />
+        <attr name="inputTextAlign" format="string" />
+    </declare-styleable>
+    <declare-styleable name="pickerDate">
+        <attr name="pickDateIcon" format="reference" />
+        <attr name="pickDateLabel" format="string" />
+    </declare-styleable>
+    <declare-styleable name="selector">
+        <attr name="selectorWarning" format="string" />
+    </declare-styleable>
+    <declare-styleable name="itemImage">
+        <attr name="itemImageImage" format="reference" />
+        <attr name="itemImageActionIcon" format="reference" />
+    </declare-styleable>
+    <declare-styleable name="itemCommon">
+        <attr name="itemCommonTitle" format="string" />
+        <attr name="itemCommonIcon" format="reference" />
+        <attr name="itemCommonAction" format="string" />
+    </declare-styleable>
+    <declare-styleable name="field">
+        <attr name="fieldLabel" format="string" />
+        <attr name="fieldValue" format="string" />
+    </declare-styleable>
+<!--    <declare-styleable name="customeViewInputFill">-->
+<!--        <attr name="imageResource" format="reference" />-->
+<!--    </declare-styleable>-->
+</resources>
