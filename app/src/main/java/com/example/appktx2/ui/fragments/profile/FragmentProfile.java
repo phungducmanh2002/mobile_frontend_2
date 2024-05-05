@@ -1,8 +1,6 @@
 package com.example.appktx2.ui.fragments.profile;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -18,7 +16,7 @@ import com.example.appktx2.data.apiResponse.UpdateAvatarRes;
 import com.example.appktx2.data.dto.RoleDto;
 import com.example.appktx2.databinding.FragmentProfileBinding;
 import com.example.appktx2.net.RetrofitClient;
-import com.example.appktx2.net.services.I_ProfileService;
+import com.example.appktx2.net.services.IProfileService;
 import com.example.appktx2.ui.activities.login.ActivityLogin;
 import com.example.appktx2.ui.activities.profile.editUser.ActivityEditUser;
 import com.github.dhaval2404.imagepicker.ImagePicker;
@@ -31,10 +29,8 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class FragmentProfile  extends Fragment {
-
     FragmentProfileBinding binding;
-    I_ProfileService service = RetrofitClient.GI().getRetrofit().create(I_ProfileService.class);
-
+    IProfileService service = RetrofitClient.GI().getRetrofit().create(IProfileService.class);
     public FragmentProfile() {
     }
     public static FragmentProfile newInstance() {
@@ -83,7 +79,6 @@ public class FragmentProfile  extends Fragment {
         getAvatar();
     }
     public void onSelectAvatarResponse(byte[] imgData){
-
         RequestBody requestBody = RequestBody.create(MediaType.parse("multipart/form-data"), imgData);
         MultipartBody.Part body = MultipartBody.Part.createFormData("image", "newavatar.image", requestBody);
 
@@ -113,8 +108,13 @@ public class FragmentProfile  extends Fragment {
         }
     }
     private void setAvatarData(byte[] data){
-        Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
-        binding.avatar.setImageBitmap(bitmap);
+//        try{
+//            Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+//            binding.avatar.setImageBitmap(bitmap);
+//        }
+//        catch (Exception e){
+//            Toast.makeText(getContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
+//        }
     }
     public void getAvatar(){
         if(AppKtx.userDto.getIdResource() == null){

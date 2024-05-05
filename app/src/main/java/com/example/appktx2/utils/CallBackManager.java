@@ -24,7 +24,20 @@ public class CallBackManager {
             }
         };
     }
-
+    public static ICallBack GetCallBackItemActionRoomCollectionManager(Context context){
+        return new ICallBack() {
+            @Override
+            public void action(Object... object) {
+                ItemCommon itemCommon = (ItemCommon) object[0];
+                Integer idRoomCollection = (Integer)itemCommon.getItemData().getItemAction().getStoredData();
+                Toast.makeText(context, "ID ROOM COLLECTION: " + idRoomCollection, Toast.LENGTH_SHORT).show();
+////                Toast.makeText(itemCommon.getContext(), "ID ROOM: " + idRoom.toString(), Toast.LENGTH_SHORT).show();
+//                Intent roomDetailIntent = new Intent(context, ActivityRoomDetail.class);
+//                roomDetailIntent.putExtra("idRoom", idRoom);
+//                context.startActivity(roomDetailIntent);
+            }
+        };
+    }
     public static ICallBack GetCallBackItemActionItemManager(Context context){
         return new ICallBack() {
             @Override

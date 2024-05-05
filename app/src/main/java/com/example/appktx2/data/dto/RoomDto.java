@@ -26,6 +26,10 @@ public class RoomDto {
     Integer roomStatus;
     @SerializedName("roomAcreage")
     Float roomAcreage;
+    @SerializedName("slot")
+    Integer slot;
+    @SerializedName("slotUse")
+    Integer slotUse;
     RoomCollectionDto roomCollection;
     List<ResourceDto> resources;
 }

@@ -14,7 +14,7 @@ public class RetrofitClient {
         }
         return  instance;
     }
-    public String baseUrl = "http://192.168.1.27:8080";
+    public String baseUrl = "http://192.168.1.12:8080";
     private Retrofit retrofit = null;
     private RetrofitClient(){
         retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();

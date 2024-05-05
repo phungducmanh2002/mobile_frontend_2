@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical"
+        android:id="@+id/bill"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:text="KÍ TÚC XÁ SINH VIÊN"
+            android:textSize="26dp"
+            android:textStyle="bold" />
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID: "
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/billId"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nội dung: "
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tiền điện nước phòng 001 tháng 04/2024"
+                android:id="@+id/title"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái: "
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã thanh toán"
+                android:id="@+id/status"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp"
+            android:id="@+id/payTimeWrapper"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thời gian: "
+                android:textStyle="bold"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20/10/2022"
+                android:id="@+id/payTime"
+                />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_smoke"
+            android:padding="10dp"
+            android:layout_marginBottom="50dp"
+            >
+
+            <TableRow
+                android:layout_marginBottom="10dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="MẶT HÀNG"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:layout_column="1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="ĐƠN GIÁ"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:layout_column="2"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="SỐ LƯỢNG"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:layout_column="3"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="THÀNH TIỀN"
+                    android:padding="3dip"
+                    android:textStyle="bold"
+                    android:layout_column="4"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/electricRow"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Điện"
+                    android:padding="3dip"
+                    android:layout_column="1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="4.000 VNĐ"
+                    android:padding="3dip"
+                    android:layout_column="2"
+                    android:id="@+id/electricPriceUnit"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="10kwh"
+                    android:padding="3dip"
+                    android:layout_column="3"
+                    android:id="@+id/electricNumber"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="4"
+                    android:layout_weight="1"
+                    android:padding="3dip"
+                    android:text="40.000 VNĐ"
+                    android:id="@+id/electricTotalPrice"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/waterRow"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Nước"
+                    android:padding="3dip"
+                    android:layout_column="1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="7.000 VNĐ"
+                    android:padding="3dip"
+                    android:layout_column="2"
+                    android:id="@+id/waterPriceUnit"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="10 m3"
+                    android:padding="3dip"
+                    android:layout_column="3"
+                    android:id="@+id/waterNumber"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="4"
+                    android:layout_weight="1"
+                    android:padding="3dip"
+                    android:text="70.000 VNĐ"
+                    android:id="@+id/waterTotalPrice"
+                    />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/roomRow"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Phòng"
+                    android:padding="3dip"
+                    android:layout_column="1"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="200.000 VNĐ"
+                    android:padding="3dip"
+                    android:layout_column="2"
+                    android:id="@+id/roomUnitPrice"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="1"
+                    android:padding="3dip"
+                    android:layout_column="3"
+                    android:id="@+id/roomNumber"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="4"
+                    android:layout_weight="1"
+                    android:padding="3dip"
+                    android:text="200.000 VNĐ"
+                    android:id="@+id/roomTotalPrice"
+                    />
+
+            </TableRow>
+
+
+            <TableRow
+                android:layout_marginTop="20dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tổng tiền"
+                    android:padding="3dip"
+                    android:layout_column="1"
+                    android:textStyle="bold"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:padding="3dip"
+                    android:layout_column="2"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:padding="3dip"
+                    android:layout_column="3"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_column="4"
+                    android:layout_weight="1"
+                    android:padding="3dip"
+                    android:text="110.000 VNĐ"
+                    android:id="@+id/totalPrice"
+                    />
+
+            </TableRow>
+
+
+
+        </TableLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:text="Ngày xuất hóa đơn: " />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="40dp"
+                    android:text="20/10/2024"
+                    android:id="@+id/dateNow"
+                    />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_alignParentLeft="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="comfirm paid"
+        android:background="@drawable/bg_rounded_orange"
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/comfirmPaid"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Export PDF"
+        android:background="@drawable/bg_rounded_blue"
+        android:textColor="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/exportPdf"
+        />
+</RelativeLayout>
+
+</LinearLayout>
+
+</LinearLayout>

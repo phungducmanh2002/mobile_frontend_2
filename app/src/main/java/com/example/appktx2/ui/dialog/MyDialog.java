@@ -13,13 +13,17 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatButton;
 
+import com.example.appktx2.data.dto.ElectricWaterDto;
 import com.example.appktx2.data.dto.RoomCollectionDto;
 import com.example.appktx2.data.dto.RoomDto;
 import com.example.appktx2.data.dto.SemesterDto;
+import com.example.appktx2.data.dto.SemesterRoomNameDto;
 import com.example.appktx2.databinding.DialogMyDialogBinding;
 import com.example.appktx2.interfaces.ICallBack;
 import com.example.appktx2.ui.components.InputDialog;
+import com.example.appktx2.ui.components.MonthPicker;
 import com.example.appktx2.ui.components.PickDate;
 import com.example.appktx2.ui.components.Selector;
 import com.example.appktx2.utils.DateUtils;
@@ -29,6 +33,106 @@ import java.util.Date;
 import java.util.List;
 
 public class MyDialog extends Dialog {
+
+    public static MyDialog CreateComfirmDialog(Context context, ICallBack onComfirm, String title){
+        MyDialog myDialog = new MyDialog(context);
+        myDialog.setTitle(title);
+        myDialog.onSave(object -> {
+            onComfirm.action();
+            myDialog.cancel();
+        });
+        myDialog.onCancle(object -> {
+            myDialog.cancel();
+        });
+
+        myDialog.binding.save.setText("Xác nhận");
+
+        return  myDialog;
+    }
+    public static MyDialog CreateCreateBillDialog(Context context, ICallBack onDataValid, List<SemesterRoomNameDto> dataList){
+        MyDialog myDialog = new MyDialog(context);
+
+        myDialog.setTitle("CREATE BILL");
+
+        Selector<SemesterRoomNameDto> roomSemesterSelector = new Selector<>(context);
+        InputDialog electricInput = new InputDialog(context);
+        InputDialog waterInput = new InputDialog(context);
+        MonthPicker monthPicker = new MonthPicker(context);
+
+        myDialog.onSave((Object... objs) -> {
+            if(electricInput.isValidate() && waterInput.isValidate()){
+                SemesterRoomNameDto semesterRoomNameDto = roomSemesterSelector.getSelectedItem();
+                Integer idRoomSemester = semesterRoomNameDto.getIdRoomSemester();
+                Integer electricNumber = Integer.parseInt(electricInput.getText());
+                Integer waterNumber = Integer.parseInt(waterInput.getText());
+                Integer month = monthPicker.getMonth();
+                Integer year = monthPicker.getYear();
+
+                ElectricWaterDto electricWaterDto = new ElectricWaterDto();
+                electricWaterDto.setIdRoomSemester(idRoomSemester);
+                electricWaterDto.setElectricNumber(electricNumber);
+                electricWaterDto.setWaterNumber(waterNumber);
+                electricWaterDto.setMonth(month);
+                electricWaterDto.setYear(year);
+
+                onDataValid.action(electricWaterDto);
+
+                myDialog.cancel();
+            }
+        });
+
+        myDialog.onCancle(object -> {
+            myDialog.cancel();
+        });
+
+
+        roomSemesterSelector.setData(dataList, (item -> {SemesterRoomNameDto r = (SemesterRoomNameDto) item;return r.getRoomName();}));
+
+        electricInput.setHint("Số điện");
+        electricInput.setInputType("number");
+        electricInput.setLength(5);
+
+        waterInput.setHint("Số nước");
+        waterInput.setInputType("number");
+        waterInput.setLength(5);
+
+        myDialog.addChildren(roomSemesterSelector, electricInput, waterInput, monthPicker);
+
+        return  myDialog;
+    }
+    public static MyDialog CreateRoomCollectonDialog(Context context, ICallBack onDataValid){
+        MyDialog myDialog = new MyDialog(context);
+
+        myDialog.setTitle("ROOM COLLECTION");
+
+        InputDialog inputRoomCollectionName = new InputDialog(context);
+
+        myDialog.onSave((Object... objs) -> {
+            if(inputRoomCollectionName.isValidate()){
+
+                String roomCollectionName = inputRoomCollectionName.getText();
+
+                RoomCollectionDto roomCollectionDto = new RoomCollectionDto();
+                roomCollectionDto.setRoomCollectionName(roomCollectionName);
+
+                onDataValid.action(roomCollectionDto);
+
+                myDialog.cancel();
+            }
+        });
+
+        myDialog.onCancle(object -> {
+            myDialog.cancel();
+        });
+
+        inputRoomCollectionName.setHint("Room collection name");
+        inputRoomCollectionName.setInputType("text");
+        inputRoomCollectionName.setLength(50);
+
+        myDialog.addChildren(inputRoomCollectionName);
+
+        return  myDialog;
+    }
     public static MyDialog CreateSemesterDialog(Context context, ICallBack onDataValid){
         MyDialog myDialog = new MyDialog(context);
         InputDialog inputSemesterName = new InputDialog(context);
@@ -156,6 +260,7 @@ public class MyDialog extends Dialog {
         Selector<RoomCollectionDto> roomCollectionSelector = new Selector<>(context);
         InputDialog roomNameInput = new InputDialog(context);
         InputDialog roomAcreage = new InputDialog(context);
+        InputDialog slot = new InputDialog(context);
         RadioGroup radioGroup = new RadioGroup(context);
         RadioButton radioButtonMale = new RadioButton(context);
         RadioButton radioButtonFemale = new RadioButton(context);
@@ -175,9 +280,10 @@ public class MyDialog extends Dialog {
         radioButtonFemale.setText("Female");
 
         myDialog.onSave((Object... objs) -> {
-            if(roomNameInput.isValidate() && roomAcreage.isValidate()){
+            if(roomNameInput.isValidate() && roomAcreage.isValidate() && slot.isValidate()){
                 String roomName = roomNameInput.getText();
                 Integer acreage = Integer.parseInt(roomAcreage.getText());
+                Integer roomSlot = Integer.parseInt(slot.getText());
                 Boolean isMale = radioButtonMale.isChecked();
                 Boolean isActive = checkBoxActive.isChecked();
                 RoomCollectionDto roomCollectionDto = roomCollectionSelector.getSelectedItem();
@@ -187,6 +293,7 @@ public class MyDialog extends Dialog {
                         .roomGender(isMale ? 0 : 1)
                         .roomStatus(isActive ? 0 : 1)
                         .roomAcreage(acreage.floatValue())
+                        .slot(roomSlot)
                         .idRoomCollection(roomCollectionDto.getId())
                         .build();
 
@@ -207,7 +314,11 @@ public class MyDialog extends Dialog {
         roomAcreage.setInputType("number");
         roomAcreage.setLength(5);
 
-        myDialog.addChildren(roomCollectionSelector, roomNameInput, roomAcreage, radioGroup, checkBoxActive);
+        slot.setHint("Slot");
+        slot.setInputType("number");
+        slot.setLength(5);
+
+        myDialog.addChildren(roomCollectionSelector, roomNameInput, roomAcreage, slot, radioGroup, checkBoxActive);
 
         return  myDialog;
     }

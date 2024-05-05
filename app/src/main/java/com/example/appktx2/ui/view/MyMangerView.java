@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -69,8 +70,19 @@ public class MyMangerView extends LinearLayout {
 
         if(this.onSearch != null){
             binding.searchBox.setVisibility(VISIBLE);
-            binding.searchBox.setOnClickListener(v -> {
-                this.onAction.action(v, "DA SET CALL BACK");
+            binding.searchBox.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+                    return false;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+                    if(onSearch!= null){
+                        onSearch.action(newText);
+                    }
+                    return false;
+                }
             });
         }
         else{

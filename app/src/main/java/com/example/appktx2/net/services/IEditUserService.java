@@ -6,7 +6,7 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.PUT;
 
-public interface I_EditUserService {
+public interface IEditUserService {
     @PUT("/api/v1/user/edit")
     Call<UserDto> editUser(@Body UserDto userDto);
 }

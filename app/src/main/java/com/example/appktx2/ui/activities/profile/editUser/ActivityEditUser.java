@@ -15,7 +15,7 @@ import com.example.appktx2.AppKtx;
 import com.example.appktx2.data.dto.UserDto;
 import com.example.appktx2.databinding.ActivityEditUserBinding;
 import com.example.appktx2.net.RetrofitClient;
-import com.example.appktx2.net.services.I_EditUserService;
+import com.example.appktx2.net.services.IEditUserService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,7 +23,7 @@ import retrofit2.Response;
 
 public class ActivityEditUser extends AppCompatActivity {
     ActivityEditUserBinding binding;
-    I_EditUserService service = RetrofitClient.GI().getRetrofit().create(I_EditUserService.class);
+    IEditUserService service = RetrofitClient.GI().getRetrofit().create(IEditUserService.class);
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

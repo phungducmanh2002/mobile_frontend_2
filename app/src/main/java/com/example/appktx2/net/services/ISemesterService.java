@@ -3,6 +3,7 @@ package com.example.appktx2.net.services;
 import com.example.appktx2.data.dto.RoomDto;
 import com.example.appktx2.data.dto.SemesterDto;
 import com.example.appktx2.data.dto.SemesterRoomDto;
+import com.example.appktx2.data.dto.SemesterRoomNameDto;
 
 import java.util.List;
 
@@ -34,4 +35,7 @@ public interface ISemesterService {
 
     @GET("/api/v1/semester/all-room-not-added/{semesterId}")
     Call<List<RoomDto>> getAllRoomNotAdded(@Path("semesterId") Integer semesterId);
+
+    @GET("/api/v1/semester/room-names/{semesterId}")
+    Call<List<SemesterRoomNameDto>> getAllRoomNameInSemester(@Path("semesterId") Integer semesterId);
 }

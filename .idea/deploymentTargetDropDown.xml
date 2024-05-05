@@ -2,19 +2,32 @@
 <project version="4">
   <component name="deploymentTargetDropDown">
     <value>
-      <entry key="ActivityLogin">
+      <entry key="ActivityBillDetail">
+        <State>
+          <targetSelectedWithDropDown>
+            <Target>
+              <type value="QUICK_BOOT_TARGET" />
+              <deviceKey>
+                <Key>
+                  <type value="VIRTUAL_DEVICE_PATH" />
+                  <value value="C:\Users\ducma\.android\avd\Phone_1.avd" />
+                </Key>
+              </deviceKey>
+            </Target>
+          </targetSelectedWithDropDown>
+          <timeTargetWasSelectedWithDropDown value="2024-05-05T11:56:46.462131100Z" />
+        </State>
+      </entry>
+      <entry key="ActivityBillManager">
         <State />
       </entry>
-      <entry key="ActivityRoomDetailItemManager">
+      <entry key="ActivityLogin">
         <State />
       </entry>
       <entry key="ActivityRoomManager">
         <State />
       </entry>
-      <entry key="ActivitySemesterManager">
-        <State />
-      </entry>
-      <entry key="TestItemManyActionActivity">
+      <entry key="TestMonthYearPickerActivity">
         <State />
       </entry>
       <entry key="app">

@@ -43,6 +43,15 @@
     <com.example.appktx2.ui.item.ItemField
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:fieldLabel="Slot: "
+        app:fieldValue="10"
+        android:layout_marginBottom="10dp"
+        android:id="@+id/slot"
+        />
+
+    <com.example.appktx2.ui.item.ItemField
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         app:fieldLabel="Gender: "
         app:fieldValue="Male"
         android:layout_marginBottom="10dp"
@@ -58,6 +67,7 @@
         android:layout_marginBottom="10dp"
         android:id="@+id/status"
         />
+
 
     <RelativeLayout
         android:layout_marginTop="20dp"

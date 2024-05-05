@@ -6,7 +6,7 @@ import com.example.appktx2.AppKtx;
 import com.example.appktx2.data.dto.UserDto;
 import com.example.appktx2.interfaces.IPDM;
 import com.example.appktx2.net.RetrofitClient;
-import com.example.appktx2.net.services.I_HomeApiService;
+import com.example.appktx2.net.services.IHomeApiService;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -14,7 +14,7 @@ import retrofit2.Response;
 
 public class HomeHandler implements IPDM.Handler {
     ActivityHome view;
-    I_HomeApiService service = RetrofitClient.GI().getRetrofit().create(I_HomeApiService.class);
+    IHomeApiService service = RetrofitClient.GI().getRetrofit().create(IHomeApiService.class);
     @Override
     public void setView(IPDM.View  view) {
         this.view = (ActivityHome)view;

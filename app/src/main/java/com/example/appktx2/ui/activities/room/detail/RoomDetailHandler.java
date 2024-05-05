@@ -48,6 +48,7 @@ public class RoomDetailHandler {
                     view.binding.acreage.setValue(roomDto.getRoomAcreage().toString());
                     view.binding.gender.setValue(roomDto.getRoomGender() == 0 ? "Male" : "Female");
                     view.binding.status.setValue(roomDto.getRoomStatus() == 0 ? "Active" : "Disable");
+                    view.binding.slot.setValue(roomDto.getSlot().toString());
 
                     view.binding.myImageListView.resetView();
 

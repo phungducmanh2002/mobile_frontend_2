@@ -16,4 +16,6 @@ public class SemesterRoomDto {
     Integer idSemester;
     @SerializedName("idRoom")
     Integer idRoom;
+    RoomDto room;
+    SemesterDto semester;
 }

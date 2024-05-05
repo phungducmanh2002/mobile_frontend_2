@@ -21,7 +21,6 @@ import java.util.List;
 public class MyImageListView extends LinearLayout {
     ViewMyListViewBinding binding;
     LayoutParams layoutParams;
-
     public MyImageListView(Context context) {
         super(context);
         init(context, null);

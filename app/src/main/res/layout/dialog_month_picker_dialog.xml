@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/main"
+    android:background="@drawable/bg_rounded_white"
+    android:layout_margin="10dp"
+    android:padding="20dp"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal|center_vertical"
+        >
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_left"
+            android:id="@+id/preYear"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2023"
+            android:background="@drawable/bg_rounded_white"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:id="@+id/year"
+            />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_arrow_right"
+            android:id="@+id/nextYear"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/dialogContainer"
+        >
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:id="@+id/monthList"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Tháng 1"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:background="@drawable/bg_rounded_smoke"
+                android:textStyle="bold"
+                android:id="@+id/thang1"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 2"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang2"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 3"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang3"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Tháng 4"
+                android:padding="15dp"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:background="@drawable/bg_rounded_smoke"
+                android:textStyle="bold"
+                android:id="@+id/thang4"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 5"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang5"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 6"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang6"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 7"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang7"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 8"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang8"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 9"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang9"
+                    />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 10"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang10"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 11"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang11"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="Tháng 12"
+                    android:padding="15dp"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:textStyle="bold"
+                    android:id="@+id/thang12"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="right"
+            android:gravity="center_horizontal"
+            >
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chọn"
+                android:textColor="@color/white"
+                android:background="@drawable/bg_rounded_blue"
+                android:layout_marginRight="20dp"
+                android:id="@+id/select"
+                />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đóng"
+                android:background="@drawable/bg_rounded_red"
+                android:textColor="@color/white"
+                android:id="@+id/cancle"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

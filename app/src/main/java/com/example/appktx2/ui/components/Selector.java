@@ -30,12 +30,10 @@ public class Selector<T> extends LinearLayout {
         super(context);
         init(context, null);
     }
-
     public Selector(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
-
     public Selector(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);

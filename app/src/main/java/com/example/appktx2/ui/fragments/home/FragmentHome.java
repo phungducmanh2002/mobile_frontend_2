@@ -14,10 +14,14 @@ import com.example.appktx2.R;
 import com.example.appktx2.databinding.FragmentHomeBinding;
 import com.example.appktx2.databinding.FragmentProfileBinding;
 import com.example.appktx2.databinding.ViewMyListViewBinding;
+import com.example.appktx2.ui.activities.bill.manager.ActivityBillManager;
+import com.example.appktx2.ui.activities.room.manager.ActivityRoomManager;
+import com.example.appktx2.ui.activities.roomCollection.manager.ActivityRoomCollectionManager;
+import com.example.appktx2.ui.activities.roomItem.manager.ActivityRoomItemManager;
+import com.example.appktx2.ui.activities.semester.manager.ActivitySemesterManager;
 
 public class FragmentHome extends Fragment {
     FragmentHomeBinding binding;
-
     public FragmentHome() {
         // Required empty public constructor
     }
@@ -27,12 +31,10 @@ public class FragmentHome extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -48,9 +50,36 @@ public class FragmentHome extends Fragment {
 
     }
     private void setEvent() {
+        binding.semester.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ActivitySemesterManager.class);
+            getContext().startActivity(intent);
+        });
+
+        binding.roomCollection.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ActivityRoomCollectionManager.class);
+            getContext().startActivity(intent);
+        });
+
+        binding.room.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ActivityRoomManager.class);
+            getContext().startActivity(intent);
+        });
+
+        binding.item.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ActivityRoomItemManager.class);
+            getContext().startActivity(intent);
+        });
+
+        binding.bill.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ActivityBillManager.class);
+            getContext().startActivity(intent);
+        });
+
+        binding.chart.setOnClickListener(v -> {
+            Toast.makeText(getContext(), "CHART", Toast.LENGTH_SHORT).show();
+        });
 
     }
-
     private void setControl() {
 
     }

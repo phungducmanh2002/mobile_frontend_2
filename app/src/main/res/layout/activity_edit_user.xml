@@ -45,6 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:inputHint="Họ"
+                    app:inputType="text"
                     android:layout_marginBottom="20dp"
                     android:id="@+id/ipFirstName"
                     />
@@ -52,6 +53,7 @@
                 <com.example.appktx2.ui.components.Input
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    app:inputType="text"
                     app:inputHint="Tên"
                     android:layout_marginBottom="20dp"
                     android:id="@+id/ipLastName"

@@ -10,6 +10,11 @@ public class DateUtils {
         int currentMonth = calendar.get(Calendar.MONTH) + 1; // Vì tháng được đếm từ 0
         return currentMonth;
     }
+    public static int GetCurrentYear(){
+        Calendar calendar = Calendar.getInstance();
+        int currentYear = calendar.get(Calendar.YEAR);
+        return currentYear;
+    }
     public static Date CreateDate(int year, int monthOfYear, int dayOfMonth){
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.YEAR, year);

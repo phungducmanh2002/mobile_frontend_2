@@ -9,6 +9,7 @@
         android:title="Thông báo"
         android:icon="@drawable/ic_bell"
         android:id="@+id/menu_notify"
+        android:visible="false"
         />
     <item
         android:title="Hồ sơ"

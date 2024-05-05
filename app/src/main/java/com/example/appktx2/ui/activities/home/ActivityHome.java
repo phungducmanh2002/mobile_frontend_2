@@ -3,6 +3,7 @@ package com.example.appktx2.ui.activities.home;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.Toast;
 import android.window.OnBackInvokedDispatcher;
 
@@ -33,6 +34,7 @@ public class ActivityHome extends AppCompatActivity implements IPDM.View {
     boolean requestExit = false;
     ActivityHomeBinding binding;
     FragmentProfile fragmentProfile;
+    int fragmentNumber = 0;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +55,13 @@ public class ActivityHome extends AppCompatActivity implements IPDM.View {
     @Override
     protected void onResume() {
         super.onResume();
+        if(fragmentNumber == 0){
+            replaceFragment(FragmentHome.newInstance());
+        }
+        else if(fragmentNumber == 1){
+            fragmentProfile = FragmentProfile.newInstance();
+            replaceFragment(fragmentProfile);
+        }
         handler.getMyInfo();
     }
     @Override
@@ -80,7 +89,9 @@ public class ActivityHome extends AppCompatActivity implements IPDM.View {
             byte[] avatarData = getBytes(iStream);
             fragmentProfile.onSelectAvatarResponse(avatarData);
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.d("GVBNKIUYGHBJ", e.getMessage());
+//            throw new RuntimeException(e);
         }
     }
     private void setControl() {
@@ -106,10 +117,14 @@ public class ActivityHome extends AppCompatActivity implements IPDM.View {
 
             if(item.getItemId() == R.id.menu_home){
                 replaceFragment(FragmentHome.newInstance());
+                fragmentNumber = 0;
             }
             if(item.getItemId() == R.id.menu_profile){
-                fragmentProfile = FragmentProfile.newInstance();
+                if(fragmentProfile == null){
+                    fragmentProfile = FragmentProfile.newInstance();
+                }
                 replaceFragment(fragmentProfile);
+                fragmentNumber = 1;
             }
 
             return  true;

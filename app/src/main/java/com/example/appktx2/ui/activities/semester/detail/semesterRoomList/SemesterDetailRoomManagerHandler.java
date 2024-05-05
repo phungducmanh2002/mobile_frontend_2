@@ -94,6 +94,8 @@ public class SemesterDetailRoomManagerHandler {
         Map<String, String> attrs = new HashMap<>();
         attrs.put("Gender: ", roomDto.getRoomGender() == 0 ? "Male" : "Female");
         attrs.put("Status: ", roomDto.getRoomStatus() == 0 ? "Active" : "Disable");
+        attrs.put("Slot: ", roomDto.getSlot().toString());
+        attrs.put("Slot use: ", roomDto.getSlotUse().toString());
 
         ItemDataManyAction itemDataManyAction = new ItemDataManyAction();
         itemDataManyAction.setTitle(roomDto.getRoomName());
