@@ -3,6 +3,7 @@ package com.example.appktx2.net.services;
 import com.example.appktx2.data.dto.BillDto;
 import com.example.appktx2.data.dto.ElectricWaterDto;
 
+import java.util.Date;
 import java.util.List;
 
 import retrofit2.Call;
@@ -11,6 +12,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface IBillService {
     @POST("/api/v1/bill/create-electric-water")
@@ -30,4 +32,10 @@ public interface IBillService {
 
     @PUT("/api/v1/bill/pay/{idBill}")
     Call<BillDto> payBill(@Path("idBill") Integer idBill);
+
+    @GET("/api/v1/bill/chart-room-bill")
+    Call<List<BillDto>> getChartRoomBill(@Query("fromTime")Date fromTime, @Query("toTime") Date toTime);
+
+    @GET("/api/v1/bill/chart-electric-water-bill")
+    Call<List<BillDto>> getChartElectricWaterBill(@Query("fromTime")Date fromTime, @Query("toTime") Date toTime);
 }

@@ -6,6 +6,7 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
@@ -27,12 +28,10 @@ public class PickDate extends LinearLayout {
         super(context);
         init(context, null);
     }
-
     public PickDate(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
-
     public PickDate(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
@@ -51,7 +50,7 @@ public class PickDate extends LinearLayout {
             Integer iconResId = a.getResourceId(R.styleable.pickerDate_pickDateIcon, R.drawable.ic_celender);
 
             if(pickDateLabel != null){
-                binding.label.setText(pickDateLabel);
+                setText(pickDateLabel);
             }
             else{
                 setDate(new Date());

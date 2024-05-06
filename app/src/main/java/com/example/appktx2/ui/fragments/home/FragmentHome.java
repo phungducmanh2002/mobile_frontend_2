@@ -15,6 +15,7 @@ import com.example.appktx2.databinding.FragmentHomeBinding;
 import com.example.appktx2.databinding.FragmentProfileBinding;
 import com.example.appktx2.databinding.ViewMyListViewBinding;
 import com.example.appktx2.ui.activities.bill.manager.ActivityBillManager;
+import com.example.appktx2.ui.activities.chart.manager.ActivityChartManager;
 import com.example.appktx2.ui.activities.room.manager.ActivityRoomManager;
 import com.example.appktx2.ui.activities.roomCollection.manager.ActivityRoomCollectionManager;
 import com.example.appktx2.ui.activities.roomItem.manager.ActivityRoomItemManager;
@@ -76,7 +77,8 @@ public class FragmentHome extends Fragment {
         });
 
         binding.chart.setOnClickListener(v -> {
-            Toast.makeText(getContext(), "CHART", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getContext(), ActivityChartManager.class);
+            getContext().startActivity(intent);
         });
 
     }
