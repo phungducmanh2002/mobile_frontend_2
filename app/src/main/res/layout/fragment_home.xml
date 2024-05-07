@@ -1,28 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="10dp"
     android:background="@drawable/bg_rounded_white"
     >
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:id="@+id/tvGround"
+        android:background="@drawable/bg_rounded_corner_blue_trong"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DOMITORY MANAGEMENT"
+        android:layout_marginBottom="50dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        
+        />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center_horizontal"
+        android:layout_marginTop="-80dp"
+        android:layout_below="@+id/tvGround"
         >
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="DOMITORY MANAGEMENT"
-            android:layout_marginBottom="50dp"
-            android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginTop="40dp"
-            />
-
+        
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,42 +41,56 @@
             >
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_weight="1"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_rounded_red"
-                android:padding="10dp"
-                android:layout_margin="10dp"
-                android:gravity="center_horizontal|center_vertical"
                 android:id="@+id/semester"
-                >
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_rounded_white_trong"
+                android:elevation="12dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/semester" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="SEMESTER"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
+
                     />
             </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_rounded_green"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_rounded_white_trong"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:gravity="center_horizontal|center_vertical"
+                android:gravity="center"
                 android:layout_weight="1"
+                android:elevation="12dp"
+                android:orientation="vertical"
                 android:id="@+id/roomCollection"
                 >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/collect_room"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ROOM COLLECTION"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:gravity="center_horizontal|center_vertical"
+                    android:singleLine="true"
+                    android:gravity="center"
                     />
             </LinearLayout>
 
@@ -80,40 +105,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_rounded_blue"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_rounded_white_trong"
+                android:elevation="12dp"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:gravity="center_horizontal|center_vertical"
+                android:gravity="center"
                 android:id="@+id/room"
                 >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/room"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ROOM"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
+                    
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_rounded_yellow"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_rounded_white_trong"
+                android:elevation="12dp"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:gravity="center_horizontal|center_vertical"
+                android:gravity="center"
                 android:layout_weight="1"
                 android:id="@+id/item"
                 >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/light"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ITEM"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:gravity="center_horizontal|center_vertical"
-                    android:textColor="@color/white"
+                    android:gravity="center"
+                    
                     />
             </LinearLayout>
 
@@ -128,40 +167,54 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_weight="1"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_rounded_gray"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_rounded_white_trong"
+                android:elevation="12dp"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:gravity="center_horizontal|center_vertical"
+                android:gravity="center"
                 android:id="@+id/bill"
                 >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/img_bill"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="BILL"
-                    android:textSize="20dp"
+                    android:textSize="18sp"
                     android:textStyle="bold"
-                    android:textColor="@color/white"
+                    
                     />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:background="@drawable/bg_rounded_violet"
+                android:layout_height="150dp"
+                android:background="@drawable/bg_rounded_white_trong"
+                android:elevation="12dp"
+                android:orientation="vertical"
                 android:padding="10dp"
                 android:layout_margin="10dp"
-                android:gravity="center_horizontal|center_vertical"
+                android:gravity="center"
                 android:layout_weight="1"
                 android:id="@+id/chart"
                 >
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/img_chart"
+                    />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="CHART"
-                    android:textSize="20dp"
-                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    
                     android:textStyle="bold"
-                    android:gravity="center_horizontal|center_vertical"
+                    android:gravity="center"
                     />
             </LinearLayout>
 
@@ -171,4 +224,4 @@
 
     </LinearLayout>
 
-</FrameLayout>
+</RelativeLayout>
