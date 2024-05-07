@@ -1,6 +1,7 @@
 package com.example.appktx2.ui.activities.bill.detail;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -12,10 +13,12 @@ import android.widget.Toast;
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.appktx2.R;
 import com.example.appktx2.data.dto.BillDto;
 import com.example.appktx2.databinding.ActivityBillDetailBinding;
 import com.example.appktx2.ui.dialog.MyDialog;
@@ -143,7 +146,7 @@ public class ActivityBillDetail extends AppCompatActivity {
         binding.dateNow.setText(DateUtils.Date2String(new Date()));
         // set trạng thái
         binding.status.setText(billDto.getStatus() ? "Đã thanh toán" : "Chưa thanh toán");
-
+        binding.status.setTextColor(billDto.getStatus() ? ContextCompat.getColor(this, R.color.green) : ContextCompat.getColor(this, R.color.red));
         // Nếu bill đã thanh toán
         if(billDto.getStatus()){
             binding.comfirmPaid.setVisibility(View.GONE);
