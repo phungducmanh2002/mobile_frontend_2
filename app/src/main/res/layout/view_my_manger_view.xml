@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
+        android:background="@drawable/bg_rounded_white_corner_trong"
         >
         <com.example.appktx2.ui.view.MyListView
             android:layout_width="match_parent"

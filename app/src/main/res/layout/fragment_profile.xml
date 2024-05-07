@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:id="@+id/main"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_trong"
+    />
 <ScrollView
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_rounded_white_trong"
+    android:layout_margin="10dp"
+
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -19,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginTop="100dp"
+            android:layout_marginTop="30dp"
             android:gravity="center_horizontal"
             >
 
@@ -27,7 +35,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:cardCornerRadius="100dp"
-                android:layout_margin="10dp"
+
                 >
                 <ImageView
                     android:layout_width="150dp"
@@ -65,7 +73,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -82,10 +90,15 @@
                     android:id="@+id/firstName"
                     />
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gray"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -102,10 +115,15 @@
                     android:id="@+id/lastName"
                     />
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gray"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -122,10 +140,15 @@
                     android:id="@+id/gender"
                     />
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gray"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -142,10 +165,15 @@
                     android:id="@+id/email"
                     />
             </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/gray"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="15dp"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -180,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="17dp"
-                    android:text="Cập nhật thông tin"
+                    android:text="Update Information"
                     android:textColor="@color/blue"
                     />
             </LinearLayout>
@@ -189,8 +217,8 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
-                android:text="Đăng xuất"
-                android:background="@drawable/bg_rounded_red"
+                android:text="Logout"
+                android:background="@drawable/bg_rounded_blue_trong"
                 android:textColor="@color/white"
                 android:layout_marginTop="40dp"
                 android:layout_gravity="right"
@@ -202,4 +230,4 @@
 </ScrollView>
 
 
-</LinearLayout>
+</RelativeLayout>
