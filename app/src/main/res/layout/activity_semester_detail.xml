@@ -1,72 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:id="@+id/main"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_trong"
+    />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp"
+    android:background="@drawable/bg_rounded_white_trong"
+    android:layout_margin="10dp"
+    android:padding="20dp"
     >
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="HK2-2024"
         android:textSize="24dp"
+        android:textColor="@color/blue_trong"
         android:textStyle="bold"
         android:layout_marginBottom="20dp"
         android:id="@+id/semesterName"
         />
-    <com.example.appktx2.ui.item.ItemField
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fieldLabel="Room price: "
-        app:fieldValue="200.000 VNĐ"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/roomPrice"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/price_tag_svgrepo_com"
+            android:layout_marginRight="10dp"
+            />
+        <com.example.appktx2.ui.item.ItemField
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fieldLabel="Room price: "
+            app:fieldValue="200.000 VNĐ"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/roomPrice"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/electric_svgrepo_com"
+            />
+        <com.example.appktx2.ui.item.ItemField
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fieldLabel="Electric price: "
+            app:fieldValue="3.000 VNĐ"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/electricPrice"
+            />
+    </LinearLayout>
 
-    <com.example.appktx2.ui.item.ItemField
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fieldLabel="Electric price: "
-        app:fieldValue="3.000 VNĐ"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/electricPrice"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/water_drop_svgrepo_com"
+            />
+        <com.example.appktx2.ui.item.ItemField
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fieldLabel="Water price: "
+            app:fieldValue="5.000 VNĐ"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/waterPrice"
+            />
 
-    <com.example.appktx2.ui.item.ItemField
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fieldLabel="Water price: "
-        app:fieldValue="5.000 VNĐ"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/waterPrice"
-        />
+    </LinearLayout>
 
 
-    <com.example.appktx2.ui.item.ItemField
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fieldLabel="Start at: "
-        app:fieldValue="20/02/2024"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/startAt"
-        />
-
-    <com.example.appktx2.ui.item.ItemField
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:fieldLabel="End at: "
-        app:fieldValue="20/02/2024"
-        android:layout_marginBottom="10dp"
-        android:id="@+id/endAt"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/calendar_svgrepo_com"
+            />
+        <com.example.appktx2.ui.item.ItemField
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fieldLabel="Start at: "
+            app:fieldValue="20/02/2024"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/startAt"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/calendar_svgrepo_com"
+            />
+        <com.example.appktx2.ui.item.ItemField
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fieldLabel="End at: "
+            app:fieldValue="20/02/2024"
+            android:layout_marginBottom="10dp"
+            android:id="@+id/endAt"
+            />
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_marginTop="20dp"
@@ -80,7 +132,7 @@
             android:text="Room manager"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:background="@drawable/bg_rounded_orange"
+            android:background="@drawable/bg_rounded_blue_trong"
             android:textColor="@color/white"
             android:id="@+id/roomManager"
             android:layout_alignParentRight="true"
@@ -110,4 +162,4 @@
 
 </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

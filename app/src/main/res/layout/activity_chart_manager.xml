@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:id="@+id/main"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_trong"
+    />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp"
+    android:background="@drawable/bg_rounded_white_trong"
+    android:padding="20dp"
+    android:layout_margin="10dp"
     >
 
     <LinearLayout
@@ -86,6 +92,7 @@
                     android:text="Thống kê tiền phòng"
                     android:layout_marginTop="40dp"
                     android:textSize="17dp"
+                    android:textColor="@color/blue_trong"
                     android:textAlignment="center"
                     android:layout_marginBottom="50dp"
                     android:textStyle="bold"
@@ -189,4 +196,4 @@
 
 </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

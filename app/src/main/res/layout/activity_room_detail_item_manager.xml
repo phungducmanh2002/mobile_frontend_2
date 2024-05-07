@@ -1,17 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:id="@+id/main"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/blue_trong"
+    />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="20dp"
+    android:background="@drawable/bg_rounded_white_trong"
+    android:layout_margin="10dp"
+    android:padding="20dp"
     >
     <RelativeLayout
         android:layout_marginTop="20dp"
@@ -48,6 +54,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginTop="20dp"
+    android:padding="10dp"
     >
     <com.example.appktx2.ui.view.MyListViewUpdate
         android:layout_width="match_parent"
@@ -67,4 +74,4 @@
 
 </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>
