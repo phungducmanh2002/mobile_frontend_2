@@ -45,6 +45,7 @@
             android:layout_marginBottom="20dp"
             app:inputHint="Email"
             app:inputType="text"
+            app:inputLabel="Email"
             android:id="@+id/email"
             />
         <com.example.appktx2.ui.components.Input
@@ -52,6 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
             app:inputHint="password"
+            app:inputLabel="Password"
             app:inputType="password"
             android:id="@+id/password"
             />

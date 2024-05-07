@@ -19,12 +19,10 @@ public class Input extends LinearLayout {
         super(context);
         init(context, null);
     }
-
     public Input(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
-
     public Input(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
@@ -44,6 +42,7 @@ public class Input extends LinearLayout {
             String length = a.getString(R.styleable.input_inputLength);
             String textAlign = a.getString(R.styleable.input_inputTextAlign);
             String type = a.getString(R.styleable.input_inputType);
+            String label = a.getString(R.styleable.input_inputLabel);
 
             if(text != null){
                 setText(text);
@@ -63,6 +62,9 @@ public class Input extends LinearLayout {
             }
             if(type != null){
                 setInputType(type);
+            }
+            if(label != null){
+                setLabel(label);
             }
             a.recycle();
         }
@@ -139,5 +141,9 @@ public class Input extends LinearLayout {
     }
     public String getText(){
         return this.binding.input.getText().toString();
+    }
+    public void setLabel(String label){
+        binding.label.setText(label);
+        binding.label.setVisibility(VISIBLE);
     }
 }

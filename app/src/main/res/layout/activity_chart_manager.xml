@@ -155,8 +155,50 @@
                     android:layout_width="match_parent"
                     android:layout_height="300dp"
                     android:id="@+id/pieChart"
+                    android:layout_marginBottom="40dp"
                     />
 
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_rounded_smoke"
+                    android:padding="10dp"
+                    android:layout_marginBottom="50dp"
+                    android:id="@+id/table"
+                    android:orientation="vertical"
+                    >
+
+                    <TableRow
+                        android:layout_marginBottom="10dp"
+                        >
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:text="PHÒNG"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:layout_column="1"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:text="TIỀN ĐÃ THU"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:layout_column="2"
+                            />
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_weight="1"
+                            android:text="TỔNG TIỀN"
+                            android:padding="3dip"
+                            android:textStyle="bold"
+                            android:layout_column="3"
+                            />
+
+                    </TableRow>
+
+                </TableLayout>
 
 
             </LinearLayout>

@@ -7,6 +7,7 @@
         <attr name="inputWarning" format="string" />
         <attr name="inputLength" format="string" />
         <attr name="inputTextAlign" format="string" />
+        <attr name="inputLabel" format="string" />
     </declare-styleable>
     <declare-styleable name="pickerDate">
         <attr name="pickDateIcon" format="reference" />
@@ -14,6 +15,7 @@
     </declare-styleable>
     <declare-styleable name="selector">
         <attr name="selectorWarning" format="string" />
+        <attr name="selectorLabel" format="string" />
     </declare-styleable>
     <declare-styleable name="itemImage">
         <attr name="itemImageImage" format="reference" />

@@ -4,10 +4,15 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.window.OnBackInvokedDispatcher;
 
@@ -24,12 +29,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.appktx2.R;
+import com.example.appktx2.data.model.ChartStatisticsModel;
 import com.example.appktx2.databinding.ActivityChartManagerBinding;
 import com.example.appktx2.databinding.ActivityHomeBinding;
 import com.example.appktx2.interfaces.IPDM;
 import com.example.appktx2.ui.fragments.home.FragmentHome;
 import com.example.appktx2.ui.fragments.profile.FragmentProfile;
 import com.example.appktx2.utils.DateUtils;
+import com.example.appktx2.utils.NumberUtils;
 import com.github.mikephil.charting.data.PieData;
 import com.github.mikephil.charting.data.PieDataSet;
 import com.github.mikephil.charting.data.PieEntry;
@@ -112,7 +119,7 @@ public class ActivityChartManager extends AppCompatActivity implements IPDM.View
             openFilePicker();
         });
     }
-    public void setChartData(Integer paid, Integer unpaid){
+    public void setChartData(Integer paid, Integer unpaid, List<ChartStatisticsModel> statisticData){
         List<PieEntry> entries = new ArrayList<>();
         entries.add(new PieEntry(paid, "Paid"));
         entries.add(new PieEntry(unpaid, "Unpaid"));
@@ -128,6 +135,96 @@ public class ActivityChartManager extends AppCompatActivity implements IPDM.View
 
         binding.chartMain.setVisibility(View.VISIBLE);
         binding.exportPdf.setVisibility(View.VISIBLE);
+
+        setStatisticsData(statisticData);
+    }
+    private void setStatisticsData(List<ChartStatisticsModel> statisticData) {
+
+        binding.table.removeAllViews();
+        binding.table.addView(CreateTableCols());
+
+        for (ChartStatisticsModel data:statisticData) {
+            TableRow tableRow = createTableStatisticRow(data);
+            if(tableRow.getParent() != null){
+                ((ViewGroup)tableRow.getParent()).removeView(tableRow);
+            }
+            binding.table.addView(tableRow);
+        }
+    }
+    private TableRow createTableStatisticRow(ChartStatisticsModel chartStatisticsModel){
+        TableRow tableRow = new  TableRow(this);
+
+        TextView tvRoomName = new TextView(this);
+        tvRoomName.setText(chartStatisticsModel.getRoomName());
+        TableRow.LayoutParams params1 = new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+        );
+        params1.column = 1;
+        params1.weight=1;
+
+        TextView tvTotalPaidMoney = new TextView(this);
+        tvTotalPaidMoney.setText(NumberUtils.GetMoney(chartStatisticsModel.getTotalPaidMoney()));
+        TableRow.LayoutParams params2 = new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+        );
+        params2.column = 2;
+        params2.weight=1;
+
+        TextView tvTotalMoney = new TextView(this);
+        tvTotalMoney.setText(NumberUtils.GetMoney(chartStatisticsModel.getTotalMoney()));
+        TableRow.LayoutParams params3 = new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+        );
+        params3.column = 3;
+        params3.weight=1;
+
+        tableRow.addView(tvRoomName, params1);
+        tableRow.addView(tvTotalPaidMoney, params2);
+        tableRow.addView(tvTotalMoney, params3);
+
+        return  tableRow;
+    }
+    private TableRow CreateTableCols(){
+        TableRow tableRow = new  TableRow(this);
+
+        TextView tvRoomName = new TextView(this);
+        tvRoomName.setText("ROOM NAME");
+        tvRoomName.setTypeface(null, Typeface.BOLD);
+        TableRow.LayoutParams params1 = new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+        );
+        params1.column = 1;
+        params1.weight=1;
+
+        TextView tvTotalPaidMoney = new TextView(this);
+        tvTotalPaidMoney.setText("PAID MONEY");
+        tvTotalPaidMoney.setTypeface(null, Typeface.BOLD);
+        TableRow.LayoutParams params2 = new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+        );
+        params2.column = 2;
+        params2.weight=1;
+
+        TextView tvTotalMoney = new TextView(this);
+        tvTotalMoney.setText("TOTAL MONEY");
+        tvTotalMoney.setTypeface(null, Typeface.BOLD);
+        TableRow.LayoutParams params3 = new TableRow.LayoutParams(
+                TableRow.LayoutParams.MATCH_PARENT,
+                TableRow.LayoutParams.WRAP_CONTENT
+        );
+        params3.column = 3;
+        params3.weight=1;
+
+        tableRow.addView(tvRoomName, params1);
+        tableRow.addView(tvTotalPaidMoney, params2);
+        tableRow.addView(tvTotalMoney, params3);
+
+        return  tableRow;
     }
     /*
      * Mở dialog chọn nơi lưu tệp

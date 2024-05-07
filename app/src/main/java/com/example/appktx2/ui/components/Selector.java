@@ -48,9 +48,13 @@ public class Selector<T> extends LinearLayout {
         if(attrs != null){
             TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.selector);
             String warning = a.getString(R.styleable.selector_selectorWarning);
+            String label = a.getString(R.styleable.selector_selectorWarning);
 
             if(warning != null){
                 setWarning(warning);
+            }
+            if(label != null){
+                setLabel(label);
             }
             a.recycle();
         }
@@ -86,5 +90,9 @@ public class Selector<T> extends LinearLayout {
     }
     public void setOnSelected(AdapterView.OnItemSelectedListener listener){
         binding.spinner.setOnItemSelectedListener(listener);
+    }
+    public void setLabel(String label){
+        binding.label.setText(label);
+        binding.label.setVisibility(VISIBLE);
     }
 }

@@ -85,13 +85,15 @@ public class MyDialog extends Dialog {
             myDialog.cancel();
         });
 
-
+        roomSemesterSelector.setLabel("Room");
         roomSemesterSelector.setData(dataList, (item -> {SemesterRoomNameDto r = (SemesterRoomNameDto) item;return r.getRoomName();}));
 
+        electricInput.setLabel("Số điện");
         electricInput.setHint("Số điện");
         electricInput.setInputType("number");
         electricInput.setLength(5);
 
+        waterInput.setLabel("Số nước");
         waterInput.setHint("Số nước");
         waterInput.setInputType("number");
         waterInput.setLength(5);
@@ -125,6 +127,7 @@ public class MyDialog extends Dialog {
             myDialog.cancel();
         });
 
+        inputRoomCollectionName.setLabel("Room collection name");
         inputRoomCollectionName.setHint("Room collection name");
         inputRoomCollectionName.setInputType("text");
         inputRoomCollectionName.setLength(50);
@@ -201,18 +204,22 @@ public class MyDialog extends Dialog {
             myDialog.cancel();
         });
 
+        inputSemesterName.setLabel("Semester name");
         inputSemesterName.setHint("Semester name");
         inputSemesterName.setInputType("text");
         inputSemesterName.setLength(50);
 
+        inputRoomPrice.setLabel("Room price");
         inputRoomPrice.setHint("Room price");
         inputRoomPrice.setInputType("number");
         inputRoomPrice.setLength(10);
 
+        inputElectricPrice.setLabel("Electric price");
         inputElectricPrice.setHint("Electric price");
         inputElectricPrice.setInputType("number");
         inputElectricPrice.setLength(10);
 
+        inputWaterPrice.setLabel("Water price");
         inputWaterPrice.setHint("Water price");
         inputWaterPrice.setInputType("number");
         inputWaterPrice.setLength(10);
@@ -240,10 +247,12 @@ public class MyDialog extends Dialog {
             myDialog.cancel();
         });
 
+        itemNameInput.setLabel("Item name");
         itemNameInput.setHint("Item name");
         itemNameInput.setInputType("text");
         itemNameInput.setLength(50);
 
+        itemQuantityInput.setLabel("Quatity");
         itemQuantityInput.setHint("Quatity");
         itemQuantityInput.setInputType("number");
         itemQuantityInput.setLength(5);
@@ -266,6 +275,7 @@ public class MyDialog extends Dialog {
         RadioButton radioButtonFemale = new RadioButton(context);
         CheckBox checkBoxActive = new CheckBox(context);
 
+        roomCollectionSelector.setLabel("Room collection");
         roomCollectionSelector.setData(dataList, (item -> {RoomCollectionDto r = (RoomCollectionDto) item;return r.getRoomCollectionName();}));
 
         checkBoxActive.setText("Active");
@@ -306,14 +316,17 @@ public class MyDialog extends Dialog {
             myDialog.cancel();
         });
 
+        roomNameInput.setLabel("Room name");
         roomNameInput.setHint("Room name");
         roomNameInput.setInputType("text");
         roomNameInput.setLength(50);
 
+        roomAcreage.setLabel("Room acreage");
         roomAcreage.setHint("Room acreage");
         roomAcreage.setInputType("number");
         roomAcreage.setLength(5);
 
+        slot.setLabel("Slot");
         slot.setHint("Slot");
         slot.setInputType("number");
         slot.setLength(5);
@@ -342,6 +355,7 @@ public class MyDialog extends Dialog {
 
         myDialog.binding.save.setText("Save");
 
+        itemQuantityInput.setLabel("Quatity");
         itemQuantityInput.setHint("Quatity");
         itemQuantityInput.setInputType("number");
         itemQuantityInput.setLength(5);
